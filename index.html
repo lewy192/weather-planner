@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <script src="assets/scripts/script.js" defer></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="brand">
+            <h1 class="main-header">Weather Dashboard</h1>
+        </header>
+        <section class="container">
+            <div class="sidebar-container">
+                <div class="city-search-container">
+                    <label for="city-search-input" class="city-search-label"
+                        >Search for a City</label
+                    >
+
+                    <input type="text" class="city-search-input" />
+                    <button class="city-search-button">
+                        <img
+                            src="assets/images/search.svg"
+                            alt="search button icon , magnifying glass"
+                        />
+                    </button>
+                </div>
+                <div class="city-selection-container">
+                    <!-- buttons will be dynamically added each with a different city-->
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="current-city-weather">
+                    <h1 class="city-name">Melbourne</h1>
+                    <br />∂
+                    <p class="current-temp">
+                        Temperature:<span class="temp-figure"></span>
+                    </p>
+                    <br />
+                    <p class="current-humid">
+                        Humidity:<span class="humid-figure"></span>
+                    </p>
+                    <br />
+                    <p class="current-wind-speed">
+                        Wind Speed:<span class="wind-speed-fig"></span>
+                    </p>
+                    <br />
+                    <p class="current-uv-index">
+                        UV-Index:<span class="uv-index-fig"></span>
+                    </p>
+
+                    <!--porperties will be added dynamically,all p tags with <br> inbetween-->
+                </div>
+                <div class="card-forcast-container">
+                    <div class="card forcast-card">City</div>
+                    <div class="card forcast-card">City</div>
+                    <div class="card forcast-card">City</div>
+                    <div class="card forcast-card">City</div>
+                    <div class="card forcast-card">City</div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

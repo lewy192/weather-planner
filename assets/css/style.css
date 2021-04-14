@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    color: black;
+}
+
+:root {
+    --cardBlue: rgb(19, 96, 219);
+    --containerBackground: #e6e6e6;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(121, 121, 121);
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar-container {
+    flex: 1 1 25%;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    flex: 2 1 75%;
+}
+
+.current-city-weather {
+    flex-basis: 60%;
+    background-color: var(--containerBackground);
+    margin-bottom: 1rem;
+}
+
+.card-forcast-container {
+    background-color: var(--containerBackground);
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 40%;
+}
+.forcast-card {
+    flex: 1 1 20%;
+}
