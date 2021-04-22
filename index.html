@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/style1.css" />
         <script src="assets/scripts/script.js" defer></script>
-        <title>Document</title>
+        <title>Weather Dashboard</title>
     </head>
     <body>
         <header class="brand">
@@ -16,16 +16,18 @@
             <div class="sidebar-container">
                 <div class="city-search-container">
                     <label for="city-search-input" class="city-search-label"
-                        >Search for a City</label
+                        >Search for a City:</label
                     >
-
-                    <input type="text" class="city-search-input" />
-                    <button class="city-search-button">
-                        <img
-                            src="assets/images/search.svg"
-                            alt="search button icon , magnifying glass"
-                        />
-                    </button>
+                    <div class="search-container">
+                        <input type="text" class="city-search-input" />
+                        <button class="city-search-button">
+                            <img
+                                class="search-icon"
+                                src="assets/icons/search.svg"
+                                alt="search button icon , magnifying glass"
+                            />
+                        </button>
+                    </div>
                 </div>
                 <div class="city-selection-container">
                     <!-- buttons will be dynamically added each with a different city-->
@@ -34,7 +36,7 @@
             <div class="content-container">
                 <div class="current-city-weather">
                     <h1 class="city-name">Melbourne</h1>
-                    <br />∂
+                    <br />
                     <p class="current-temp">
                         Temperature:<span class="temp-figure"></span>
                     </p>
@@ -48,17 +50,44 @@
                     </p>
                     <br />
                     <p class="current-uv-index">
-                        UV-Index:<span class="uv-index-fig"></span>
+                        UV-Index:<span class="uv-index-fig">52</span>
                     </p>
 
                     <!--porperties will be added dynamically,all p tags with <br> inbetween-->
                 </div>
+
                 <div class="card-forcast-container">
-                    <div class="card forcast-card">City</div>
-                    <div class="card forcast-card">City</div>
-                    <div class="card forcast-card">City</div>
-                    <div class="card forcast-card">City</div>
-                    <div class="card forcast-card">City</div>
+                    <h2 class="forecast-header">5-Day Forecast:</h2>
+                    <div class="card forcast-card">
+                        <h2 class="date">22/4/21</h2>
+                        <img src="tempor" alt="changes " class="icon" />
+                        <p class="temp">100</p>
+                        <p class="humid">100</p>
+                    </div>
+                    <div class="card forcast-card">
+                        <h2 class="date">22/4/21</h2>
+                        <img src="tempor" alt="changes " class="icon" />
+                        <p class="temp">100</p>
+                        <p class="humid">100</p>
+                    </div>
+                    <div class="card forcast-card">
+                        <h2 class="date">22/4/21</h2>
+                        <img src="tempor" alt="changes " class="icon" />
+                        <p class="temp">100</p>
+                        <p class="humid">100</p>
+                    </div>
+                    <div class="card forcast-card">
+                        <h2 class="date">22/4/21</h2>
+                        <img src="tempor" alt="changes " class="icon" />
+                        <p class="temp">100</p>
+                        <p class="humid">100</p>
+                    </div>
+                    <div class="card forcast-card">
+                        <h2 class="date">22/4/21</h2>
+                        <img src="tempor" alt="changes " class="icon" />
+                        <p class="temp">100</p>
+                        <p class="humid">100</p>
+                    </div>
                 </div>
             </div>
         </section>
