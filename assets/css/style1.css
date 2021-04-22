@@ -125,3 +125,7 @@ body {
 .forecast-header {
     margin-left: 1rem;
 }
+
+.figure {
+    display: none;
+}

@@ -19,7 +19,11 @@
                         >Search for a City:</label
                     >
                     <div class="search-container">
-                        <input type="text" class="city-search-input" />
+                        <input
+                            type="text"
+                            class="city-search-input"
+                            placeholder="eg. Melbourne,au"
+                        />
                         <button class="city-search-button">
                             <img
                                 class="search-icon"
@@ -35,23 +39,11 @@
             </div>
             <div class="content-container">
                 <div class="current-city-weather">
-                    <h1 class="city-name">Melbourne</h1>
-                    <br />
-                    <p class="current-temp">
-                        Temperature:<span class="temp-figure"></span>
-                    </p>
-                    <br />
-                    <p class="current-humid">
-                        Humidity:<span class="humid-figure"></span>
-                    </p>
-                    <br />
-                    <p class="current-wind-speed">
-                        Wind Speed:<span class="wind-speed-fig"></span>
-                    </p>
-                    <br />
-                    <p class="current-uv-index">
-                        UV-Index:<span class="uv-index-fig">52</span>
-                    </p>
+                    <h1 class="city-name">Search For a City's Weather</h1>
+                    <p class="current-temp figure"></p>
+                    <p class="current-humid figure"></p>
+                    <p class="current-wind-speed figure"></p>
+                    <p class="current-uv-index figure"></p>
 
                     <!--porperties will be added dynamically,all p tags with <br> inbetween-->
                 </div>
