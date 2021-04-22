@@ -9,22 +9,79 @@
     --cardBlue: rgb(19, 96, 219);
     --containerBackground: #e6e6e6;
 }
+body {
+    margin: 0;
+}
 
 .brand {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(121, 121, 121);
+    margin: 0;
 }
 
+.uv-index-fig {
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+}
+
+.uv-low {
+    background-color: green;
+}
+.uv-mid {
+    background-color: yellow;
+}
+.uv-high {
+    background-color: red;
+}
+/* MAIN CONTAINER */
 .container {
     display: flex;
 }
 
+/* SIDEBAR */
 .sidebar-container {
     flex: 1 1 25%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.city-search-label {
+    margin: 0.75rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.city-search-container {
+    display: flex;
+    flex-direction: column;
 }
 
+.search-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.city-search-button {
+    height: 2.5rem;
+    border-radius: 6px;
+    background-color: var(--cardBlue);
+    border: 1px solid lightgrey;
+    flex: 1 1 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-icon {
+    /* filter edits the properties of images */
+    /* i am inverting to turn the black svg to white */
+    filter: invert(100%);
+}
+.city-search-input {
+    height: 2.5rem;
+    flex: 3 1 90%;
+}
+/* CONTENT CONTAINER */
 .content-container {
     display: flex;
     flex-direction: column;
@@ -34,15 +91,26 @@
 .current-city-weather {
     flex-basis: 60%;
     background-color: var(--containerBackground);
-    margin-bottom: 1rem;
+    margin: 1rem 1rem 1rem 0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgrey;
 }
 
 .card-forcast-container {
     background-color: var(--containerBackground);
     display: flex;
-    justify-content: space-evenly;
+    /* align-items: center; */
+    justify-content: space-around;
     flex-basis: 40%;
 }
 .forcast-card {
-    flex: 1 1 20%;
+    flex: 1 1 15%;
+    margin-right: 3rem;
+}
+
+@media screen and(max-width:768) {
+    .container {
+        flex-direction: column;
+    }
 }
