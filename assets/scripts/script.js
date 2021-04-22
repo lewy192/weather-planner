@@ -6,7 +6,7 @@ const cityNameHeader = document.querySelector(".city-name");
 
 const apiKey = "7e5922ef7f6bc85e485e53b28667f43a";
 
-// const getCityCoords = api.openweathermap.org/data/2.5/weather?
+const urlWeatherByCityName = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 
 function displayCurrentWeather(cityCoords) {
     const tempFigure = document.querySelector(".current-temp");
@@ -41,7 +41,6 @@ function getCityCoords(apiKey, cityName) {
     const urlWeatherByCityName = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
     fetch(urlWeatherByCityName)
         .then(function (response) {
-            console.log(response);
             if (response.ok) return response.json();
             throw new Error("Geocoding Api Failed");
         })
