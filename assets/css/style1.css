@@ -6,7 +6,7 @@
 }
 
 :root {
-    --cardBlue: rgb(19, 96, 219);
+    --cardBlue: rgb(96, 96, 216);
     --containerBackground: #e6e6e6;
 }
 body {
@@ -106,20 +106,17 @@ body {
     background-color: var(--containerBackground);
     border: 1px solid lightgrey;
     display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    align-items: space-around;
     flex-direction: column;
     margin: 1rem;
     /* flex-basis: 40%; */
 }
 
-.forcast-card {
+.forecast-card {
     /* flex: 1 1 15%; */
     color: white;
     margin: 1rem;
     border-radius: 6px;
-    background-color: rgb(96, 96, 216);
+    background-color: var(--cardBlue);
     padding: 1rem;
 }
 .forecast-header {
@@ -128,4 +125,34 @@ body {
 
 .figure {
     display: none;
+}
+
+.city-selection-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.city-button {
+    font-size: 20px;
+    border-radius: 6px;
+    border: 1px solid lightgrey;
+    padding: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    .sidebar-container {
+        flex: 1 1 20%;
+    }
+    .content-container {
+        flex: 1 1 80%;
+    }
+
+    .card-forcast-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
