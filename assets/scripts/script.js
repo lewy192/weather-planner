@@ -24,6 +24,7 @@ function displayCurrentWeather(cityCoords) {
             throw new Error("Try a Different city");
         })
         .then((data) => {
+            console.log(data);
             // TODO: delete errorPara and add city name header back
             cityNameHeader.textContent = data.timezone.split("/")[1];
             document
@@ -40,7 +41,7 @@ function displayCurrentWeather(cityCoords) {
             fiveDayForecastCards(data);
         })
         .catch((err) => {
-            cityName.textContent;
+            cityName.textContent = "Error with weather api";
         });
 }
 
