@@ -46,8 +46,8 @@ function displayCurrentWeather(cityCoords) {
 }
 
 function getCityCoords(apiKey, cityName) {
-    // const urlWeatherByCityName = `http://api.openweathermap.org/geo/1.0/direct?q=melbourne,au&appid=${apiKey}`;
-    const urlWeatherByCityName = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
+    // const urlWeatherByCityName = `https://api.openweathermap.org/geo/1.0/direct?q=melbourne,au&appid=${apiKey}`;
+    const urlWeatherByCityName = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
     fetch(urlWeatherByCityName)
         .then(function (response) {
             if (response.ok) return response.json();
@@ -113,7 +113,7 @@ function fiveDayForecastCards(data) {
             "en-US"
         );
         const icon = document.createElement("img");
-        icon.src = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
+        icon.src = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
         const temperatureParagraph = document.createElement("p");
         temperatureParagraph.textContent = `Temperature:${day.temp.day}`;
         const humidParagraph = document.createElement("p");
