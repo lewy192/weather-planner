@@ -8,7 +8,7 @@ const apiKey = "7e5922ef7f6bc85e485e53b28667f43a";
 
 // const getCityCoords = api.openweathermap.org/data/2.5/weather?
 
-function displayCurrentWeather(cityCoords) {
+function displayCurrentWeather(cityCoords, cityName) {
     const tempFigure = document.querySelector(".current-temp");
     const humidFigure = document.querySelector(".current-humid");
     const windSpeedFigure = document.querySelector(".current-wind-speed");
@@ -24,12 +24,14 @@ function displayCurrentWeather(cityCoords) {
             throw new Error("Try a Different city");
         })
         .then((data) => {
-            console.log(data);
-            // TODO: delete errorPara and add city name header back
-            cityNameHeader.textContent = data.timezone.split("/")[1];
-            document
-                .querySelectorAll(".figure")
-                .forEach((element) => (element.style.display = "block"));
+            const errorParagraph = document.querySelector(".error-paragraph");
+            if (errorParagraph) {
+                errorParagraph.remove();
+            }
+            for (const child of currentCityForcast.children) {
+                child.style.display = "block";
+            }
+            cityNameHeader.textContent = cityName.split(",")[0];
             windSpeedFigure.textContent = windSpeedFigure.textContent = `Wind Speed:${data.current.wind_speed}`;
             tempFigure.textContent = `Temperature:${data.current.temp}`;
             humidFigure.textContent = `Humidity:${data.current.humidity}%`;
@@ -54,23 +56,24 @@ function getCityCoords(apiKey, cityName) {
             throw new Error("Geocoding Api Failed");
         })
         .then(function (data) {
-            displayCurrentWeather(data);
+            displayCurrentWeather(data, cityName);
         })
         .catch(function (err) {
             if (err.constructor === TypeError) {
-                cityNameHeader.remove();
+                for (const child of currentCityForcast.children) {
+                    child.style.display = "none";
+                }
                 const errorParagraph = document.createElement("pre");
                 errorParagraph.textContent =
                     "ERROR:\nTry another city. \nMake sure you enter it in the format:\nCityName,CountryCode";
                 errorParagraph.style.fontSize = "16px";
                 errorParagraph.style.fontWeight = "bold";
-                // TODO: add class to errorPara
+                errorParagraph.classList.add("error-paragraph");
                 currentCityForcast.appendChild(errorParagraph);
             } else {
                 cityNameHeader.textContent =
                     "Geoencoding Api failed, try again later.";
             }
-            // Notify user they have requested a city thats not availible
         });
 }
 
@@ -78,12 +81,10 @@ function executeCityWeatherSearch() {
     const cityNameInput = document.querySelector(".city-search-input");
     getCityCoords(apiKey, cityNameInput.value);
 }
-
-// getCityCoords(apiKey, "Melbour");
-
 citySearchButton.addEventListener("click", function (event) {
     event.preventDefault();
     executeCityWeatherSearch();
+    document.querySelector(".city-search-input").value = "";
 });
 
 function uvIndexColour(uvindex, element) {
